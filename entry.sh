@@ -7,7 +7,8 @@ done;
 
 # Convert certificates
 for f in /Untrusted/*; 
-    echo ""
-    do openssl x509 -text -inform DER -in ${f} -out /tmp/$(basename ${f});
+    do
+    echo "";
+    openssl x509 -text -inform DER -in ${f} -out /tmp/$(basename ${f});
     openssl verify /tmp/$(basename ${f})
 done;
